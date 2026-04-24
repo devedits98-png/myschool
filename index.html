@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adrash Vidya Niketan Public School Harpura - Premium UI</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body { font-family: 'Poppins', sans-serif; background:#f5f7fa; }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1509062522246-3755977927d7');
+      background-size: cover;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1{font-size:48px}
+    header p{margin-top:10px;font-size:18px}
+
+    nav {
+      position: sticky;
+      top:0;
+      background: rgba(44,62,80,0.95);
+      padding: 12px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: white;
+      margin: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition:0.3s;
+    }
+
+    nav a:hover { color: #00ffcc; }
+
+    section { padding: 60px 20px; }
+    .container { max-width: 1100px; margin: auto; }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{ transform: translateY(-5px); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 20px;
+    }
+
+    img { width: 100%; border-radius: 15px; }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    input, textarea {
+      width: 100%; padding: 12px; margin: 8px 0;
+      border-radius: 8px; border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: linear-gradient(45deg,#00c9ff,#92fe9d);
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    button:hover { opacity:0.8 }
+
+    /* Dashboard */
+    #dashboard {
+      display: none;
+      background: #0f172a;
+      color: white;
+      padding: 30px;
+    }
+
+    .dash-box {
+      background: linear-gradient(45deg,#1e3c72,#2a5298);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      display: inline-block;
+      width: 200px;
+      text-align:center;
+    }
+
+    /* Login Popup */
+    .login-box {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      display: none;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      width:300px;
+    }
+
+    /* Hero Button */
+    .hero-btn{
+      margin-top:20px;
+      display:inline-block;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Adrash Vidya Niketan Public School</h1>
+  <p>Where Future Begins 🚀</p>
+  <button class="hero-btn" onclick="document.getElementById('contact').scrollIntoView()">Apply Now</button>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#courses">Courses</a>
+  <a href="#contact">Contact</a>
+  <a href="#" onclick="openLogin()">Admin</a>
+</nav>
+
+<section id="home" class="container">
+  <h2>Welcome</h2>
+  <div class="card">
+    <p>Welcome to Adarsh Vidya Niketan
+जहाँ शिक्षा के साथ संस्कार और सफलता की नई शुरुआत होती है।.</p>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <h2>About Us</h2>
+  <div class="card">
+    <p>Welcome to Adarsh Vidya Niketan, a center of excellence dedicated to shaping bright futures. Our school is committed to providing high-quality education that nurtures knowledge, discipline, and strong moral values in every student.
+
+At Adarsh Vidya Niketan, we believe that true education goes beyond textbooks. We focus on the overall development of students by encouraging creativity, critical thinking, and leadership skills. Our goal is to create confident individuals who are ready to face the challenges of the modern world.
+
+With a team of dedicated and experienced teachers, we ensure a supportive and inspiring learning environment. Our modern teaching methods, well-equipped classrooms, and emphasis on extracurricular activities help students discover and develop their full potential.
+
+We take pride in building not just academically strong students, but also responsible citizens with integrity and respect for society.
+
+At Adarsh Vidya Niketan, we don’t just educate — we inspire, empower, and transform lives..</p>
+  </div>
+</section>
+
+<<section id="gallery" class="container">
+  <h2>Gallery</h2>
+  <div class="grid">
+    <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238">
+    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
+  </div>
+</section>
+
+<section id="courses" class="container">
+  <h2>Courses</h2>
+  <div class="grid">
+    <div class="card"><h3>Mathematics</h3></div>
+    <div class="card"><h3>Science</h3></div>
+    <div class="card"><h3>English</h3></div>
+    <div class="card"><h3>Computer</h3></div>
+    <div class="card"><h3>Hindi</h3></div>
+    <div class="card"><h3>sanskrite</h3></div>
+    <div class="card"><h3>Social Science</h3></div>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2>Contact Us</h2>
+  <div class="card">
+    <form onsubmit="return submitForm()">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="response"></p>
+  </div>
+</section>
+
+<section id="contact" style="padding: 60px; background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; text-align: center;">
+    
+    <h2 style="font-size: 32px;">Contact Us</h2>
+    <p>We would love to hear from you!</p>
+
+    <div style="margin-top: 25px; font-size: 20px;">
+        
+        <p>📞 <a href="tel:+919801136857" style="color:white; text-decoration:none;">+91 9801136857</a></p>
+        
+        <p>📧 <a href="krrupesh80@gmail.com" style="color:white; text-decoration:none;">krrupesh80@gmail.com</a></p>
+
+    </div>
+
+</section>
+
+<section id="dashboard">
+  <h2>Admin Dashboard</h2>
+  <div class="dash-box">Students<br><b>120</b></div>
+  <div class="dash-box">Teachers<br><b>25</b></div>
+  <div class="dash-box">Messages<br><b id="messages">0</b></div>
+</section>
+
+<div class="login-box" id="loginBox">
+  <h3>Admin Login</h3>
+  <input type="text" id="user" placeholder="Username">
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<footer>
+  <p>© 2026 Adrash Viddya Niketan Public School |Design By DevXD </p>
+</footer>
+
+<script>
+function submitForm() {
+  let name = document.getElementById("name").value;
+  document.getElementById("response").innerText = "Thanks " + name + "!";
+
+  let count = localStorage.getItem("msg") || 0;
+  count++;
+  localStorage.setItem("msg", count);
+  document.getElementById("messages").innerText = count;
+
+  return false;
+}
+
+function openLogin(){
+  document.getElementById("loginBox").style.display = "block";
+}
+
+function login(){
+  let u = document.getElementById("user").value;
+  let p = document.getElementById("pass").value;
+
+  if(u === "admin" && p === "1234"){
+    document.getElementById("dashboard").style.display = "block";
+    document.getElementById("loginBox").style.display = "none";
+  } else {
+    alert("Wrong Login");
+  }
+}
+
+window.onload = function(){
+  let count = localStorage.getItem("msg") || 0;
+  document.getElementById("messages").innerText = count;
+}
+</script>
+
+</body>
+</html>
